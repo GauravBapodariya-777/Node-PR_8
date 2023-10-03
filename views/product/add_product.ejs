@@ -1,0 +1,160 @@
+<%- include('../header') %>
+
+<div class="page-wrapper">
+    <!-- ============================================================== -->
+    <!-- Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <h4 class="page-title">Form Basic</h4>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Bread crumb and right sidebar toggle -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Container fluid  -->
+    <!-- ============================================================== -->
+    <div class="container-fluid">
+        <!-- ============================================================== -->
+        <!-- Start Page Content -->
+        
+        <!-- ============================================================== -->
+        <div class="row">
+           
+            <div class="col-md-6">
+               
+                <div class="card">
+                    <% if(message.success){ %>
+                        <div class="alert alert-success" role="alert">
+                            <%= message.success %>
+                        </div>
+                    <% } %>
+
+                    <% if(message.error){ %>
+                        <div class="alert alert-danger" role="alert">
+                            <%= message.error %>
+                        </div>
+                    <% } %>
+                    
+                    <form  method="post" action="/postProduct" class="form-horizontal" enctype="multipart/form-data">
+                       
+                        <div class="card-body">
+                           
+                            <h4 class="card-title">Product</h4>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Category</label>
+                                <div class="col-sm-9">
+                                    <select onchange="categorydata()" name="category" class="form-control">
+                                            <option value="">---select category---</option>
+                                            <% category.map((val)=>{ %>
+                                                <option id="category" value="<%= val.id %>"><%= val.category %></option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="fname" class="col-sm-3 text-right control-label col-form-label">Subategory</label>
+                                <div class="col-sm-9">
+                                    <select name="subcategory" class="form-control">
+                                            <option value="">---select subcategory---</option>
+                                            <% subcategory.map((val)=>{ %>
+                                                <option value="<%= val.id %>"><%= val.subcategory %></option>
+                                            <% }) %>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="lname" class="col-sm-3 text-right control-label col-form-label">Product</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="product" class="form-control" id="lname" placeholder="Product Name Here">
+                                </div>
+                            </div>
+                            
+
+                            <div class="form-group row">
+                                <label for="email1" class="col-sm-3 text-right control-label col-form-label">Price</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="price" class="form-control" id="email1" placeholder="Price Name Here">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Qty</label>
+                                <div class="col-sm-9">
+                                    <input type="text" name="qty" class="form-control" id="cono1" placeholder="Contact No Here">
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Description</label>
+                                <div class="col-sm-9">
+                                    <textarea name="description" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Image</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" name="productimage">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="border-top">
+                            <div class="card-body">
+                                <button type="sunmit" class="btn btn-primary">Submit</button>
+                            </div>
+                            <a href="/product" class="btn btn-success d-block mb-3 text-white">View Product</a>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+
+            </div>
+            
+        </div>
+        <!-- editor -->
+       
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <footer class="footer text-center">
+        All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
+    </footer>
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+</div>
+
+<%- include('../footer') %>
+
+<script type="text/javascript">
+
+    const categorydata = () => {
+        let category = document.getElementById('category').value;
+
+    }
+    
+</script>
