@@ -43,31 +43,29 @@
 
 
         <!-- Sign In Start -->
-        
-<div id="recoverform">
-    <div class="text-center">
-        <span class="text-white">Enter your e-mail address below and we will send you instructions how to recover a password.</span>
-    </div>
-    <div class="row m-t-20">
-        <!-- Form -->+
-        <form method="post" class="col-12" action="/emailData">
-            <!-- email -->
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text bg-danger text-white" id="basic-addon1"><i class="ti-email"></i></span>
+        <div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <form method="post" class="form-horizontal m-t-20" style="display: contents;" id="loginform" action="/emailData">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <div class="bg-secondary rounded p-4 p-sm-5 my-4 mx-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                                <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>DarkPan</h3>
+                            </a>
+                            <h3>Sign In</h3>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" name="emaildata" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <label for="floatingInput">Email address</label>
+                        </div>
+                        <button href="/" class="btn btn-primary py-3 d-inline w-50"><a href="/" class="text-white">Back</a></button>  
+                        <button type="submit" class="btn btn-primary d-inline py-3 w-50">Recover</button>
+                        <p class="text-center mb-0">Don't have an Account? <a href="/register">Sign Up</a></p>
+                    </div>
                 </div>
-                <input type="text" name="emaildata" class="form-control form-control-lg" placeholder="Email Address" aria-label="Username" aria-describedby="basic-addon1">
+                </form>
             </div>
-            <!-- pwd -->
-            <div class="row m-t-20 p-t-20 border-top border-secondary">
-                <div class="col-12">
-                    <a class="btn btn-success" href="#" id="to-login" name="action">Back To Login</a>
-                    <button class="btn btn-info float-right" type="submit">Recover</button>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
+        </div>
         <!-- Sign In End -->
     </div>
 

@@ -27,7 +27,7 @@ const registerData = async (req, res) => {
             if (user) {
                 console.log("Record successfully insert");
                 req.flash('success', 'Record successfully insert');
-                return res.redirect('back');
+                return res.redirect('/');
             } else {
                 console.log("Record not successfully insert");
                 return res.redirect('back');
